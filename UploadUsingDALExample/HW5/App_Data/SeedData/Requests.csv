@@ -1,0 +1,6 @@
+ID,Vno,LastName,FirstName,Date,PhoneNumber,CatalogYear,Email,Major,Minor,Advisor
+,00012345,Cooper,Patty,10/18/2016,5551234567,2013-14,name1@mymail.com,Psychology,Education,Your mama
+,00123456,Wehrli,William,11/23/2016,5559876543,2014-15,name2@mymail.com,Special Education,Education,Shannon Parker
+,00012347,McNary,Wyatt,1/25/2016,5551357924,2015-16,name3@mymail.com,Computer Science,Math,Jie Liu
+,00988753,McCarthy,Lauren,3/18/2016,5550864297,2013-14,name4@mymail.com,Massage Therapy,Helping hands,David Olson
+,00988753,Henderson,Levi,3/18/2016,5550864297,2013-14,name4@mymail.com,Massage Therapy,Helping hands,David Olso

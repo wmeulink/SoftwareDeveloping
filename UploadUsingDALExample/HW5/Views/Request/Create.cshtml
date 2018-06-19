@@ -1,0 +1,157 @@
+﻿@model HW5.Models.Request
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@Html.ActionLink("Update/Change Form", "Create", "Request", new { area = "" }, new { @class = "navbar-brand" })
+@Html.ActionLink("View Change Requests", "Index", "Request", new { area = "" }, new { @class = "navbar-brand" })
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <!-- V# -->
+            
+        </div>
+            <!-- Date -->
+            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-lg-3" })
+            <div class="col-lg-9">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", @placeholder = "mm/dd/yyyy" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+        </div>
+            <div class="form-group">
+                <!-- Last Name -->
+                @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-lg-3" })
+                <div class="col-lg-9">
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+           <div class="form-group"><!-- First Name -->
+                @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-lg-3" })
+                <div class="col-lg-9">
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        
+        <div class="form-group">
+            <!-- Major -->
+            @Html.LabelFor(model => model.Major, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Major, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Major, "", new { @class = "text-danger" })
+        </div>
+
+            <div class="form-group">
+                <!-- Phone Number -->
+                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "5551234567", @min = "1110000000", @max = "9999999999", @maxlength = "10" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <!-- Email -->
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "something@myemail.com" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div>
+            <div class="form-group">
+                <!-- Minor -->
+                @Html.LabelFor(model => model.Minor, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Minor, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Minor, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+            <div class="form-group">
+                <!-- Advisor -->
+                @Html.LabelFor(model => model.Advisor, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Advisor, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Advisor, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+            <div class="form-group">
+                <!-- Catalog Year -->
+                @Html.LabelFor(model => model.CatalogYear, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.CatalogYear, new SelectList(new string[] { "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17" }), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CatalogYear, "", new { @class = "text-danger" })
+                </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-lg-9">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div><br />
+
+}
+<style>
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #ADD8E6;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
